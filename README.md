@@ -1,9 +1,11 @@
 # Smart-Elevator
 
-Mohammad Sadegh Salimi
+## Contributors:
+* Mohammad Sadegh Salimi
 
-Parsa Sharifi
+* Parsa Sharifi
 
-Alireza Foroodnia
+* Alireza Foroodnia
 
-Mohammad Javad MAheronnaghsh
+* Mohammad Javad MAheronnaghsh
+
