@@ -1,4 +1,5 @@
 # Smart-Elevator
+This is the project of embedded system design.
 
 ## Contributors:
 * Mohammad Sadegh Salimi
@@ -8,4 +9,3 @@
 * Alireza Foroodnia
 
 * Mohammad Javad MAheronnaghsh
-
