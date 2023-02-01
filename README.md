@@ -20,3 +20,5 @@ This is the project of embedded system design.
 In this project, I have made a folder named 'Simple Apps - Raspberri Pi' that concludes the neccessary simple python codes to complete this project. I think it is also a good tutorial for new raspberry pi users.
 ### Simple Apps - Arduino
 In this project, I have made a folder named 'Simple Apps - Arduino' that concludes the neccessary simple python codes to complete this project. I think it is also a good tutorial for new arduino users.
+
+https://electropeak.com/learn/interfacing-r308-biometric-fingerprint-sensor-module-with-arduino/
