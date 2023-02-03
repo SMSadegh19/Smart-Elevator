@@ -21,7 +21,7 @@ This is the project of embedded system design.
 In this project, I have made a folder named 'Simple Apps - Raspberri Pi' that concludes the neccessary simple python codes to complete this project. I think it is also a good tutorial for new raspberry pi users.
 ### Simple Apps - Arduino
 In this project, I have made a folder named 'Simple Apps - Arduino' that concludes the neccessary simple python codes to complete this project. I think it is also a good tutorial for new arduino users.
-## Controller.ino
+### Controller.ino
 This file consists of the main codes to run this project.
 It is a mixture of main.ino file (that is the state-controller), and all_modules.ino file (that is the abstraction of needed_methods for modules).
 After completing this file, our code is finished (except web app).
