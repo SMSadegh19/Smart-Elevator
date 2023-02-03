@@ -44,6 +44,7 @@ To get benefits of this project:
 * We want to use Bluetooth Sensor for additional score, to show a UI/UX for our elevator.
 * We have made a Web Application for the previous task.
 * We have used Arduino instead of Raspberry Pi. The reasons are:
+
 ** Arduino gives us a better sense of working with a hardware material.
 ** Raspberry Pi needs more initial configurations, and needs monitor for the first time use.
 ** Compiling codes in Arduino is much more easier.
