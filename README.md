@@ -27,12 +27,12 @@ It is a mixture of main.ino file (that is the state-controller), and all_modules
 After completing this file, our code is finished (except web app).
 
 ## Modules
-### Fingerprint Sensor
-### Keypad
-### Light Sensor
-### Buzzer
-### Arduino Board
-### Distance Sensor
+#### Fingerprint Sensor
+#### Keypad
+#### Light Sensor
+#### Buzzer
+#### Arduino Board
+#### Distance Sensor
 
 ## How to use
 To get benefits of this project:
