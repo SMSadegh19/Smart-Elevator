@@ -62,13 +62,13 @@ void loop() {
           
           delay(100);
           int e_number = 0;
-          for(int i = 1; i < 30; i += 1){
+          for(int i = 1; i < 40; i += 1){
             distance = calculateDistance(); 
-            if (distance > 0 & distance < 18){
+            if (distance > 0 & distance < 19){
               e_number += 1;
               Serial.println("EMErg");
             }
-            delay(100);
+            delay(10);
           }
           if (e_number >= 2){
             emergency = true;
@@ -80,25 +80,44 @@ void loop() {
         // Serial.println(keypad_input);
         go_up = true;
         Serial.println("Going up!");
+        delay(1000);
+        for (int j = 0; j <= int(keypad_input - level); j += 1){
+          level += 1;
+          Serial.println("On level Up!");
+          digitalWrite(emergency_buzzer, HIGH);
+          delay(300);
+          digitalWrite(emergency_buzzer, LOW);
+          delay(300);
+          go_up = false;
+          Serial.println("Current Level is: ");
+          Serial.println(level);
+        }
       }
+    
+
+        
+      
       else if (level > int(keypad_input)){
         go_down = true;
         Serial.println("Going down!");
       }
       
-      Serial.println(keypad_input);
+      // Serial.println(keypad_input);
+  
     }
   }
+  
   else if (emergency == true){
-    for(int i = 0; i < 10; i += 1){
+    for(int i = 0; i < 30; i += 1){
       Serial.println("Emergency!");
       digitalWrite(emergency_buzzer, HIGH);
-      delay(300);
+      delay(100);
       digitalWrite(emergency_buzzer, LOW);
-      delay(300);
+      delay(100);
     }
     emergency = false;
     
   }
   
 }
+
