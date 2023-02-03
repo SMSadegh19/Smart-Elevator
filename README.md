@@ -45,6 +45,6 @@ To get benefits of this project:
 * We have made a Web Application for the previous task.
 * We have used Arduino instead of Raspberry Pi. The reasons are:
 
-** Arduino gives us a better sense of working with a hardware material.
-** Raspberry Pi needs more initial configurations, and needs monitor for the first time use.
-** Compiling codes in Arduino is much more easier.
+  ** Arduino gives us a better sense of working with a hardware material.
+  ** Raspberry Pi needs more initial configurations, and needs monitor for the first time use.
+  ** Compiling codes in Arduino is much more easier.
