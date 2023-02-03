@@ -81,17 +81,22 @@ void loop() {
         go_up = true;
         Serial.println("Going up!");
         delay(1000);
-        for (int j = 0; j <= int(keypad_input - level); j += 1){
-          level += 1;
-          Serial.println("On level Up!");
+        Serial.println(keypad_input);
+        Serial.println(level);
+        for (int j = 0; j < int(keypad_input - level); j += 1){
+          // level += 1;
+          Serial.println("One level Up!");
           digitalWrite(emergency_buzzer, HIGH);
           delay(300);
           digitalWrite(emergency_buzzer, LOW);
           delay(300);
-          go_up = false;
-          Serial.println("Current Level is: ");
-          Serial.println(level);
+          
         }
+        // level -= 1;
+        level = keypad_input;
+        go_up = false;
+        Serial.println("Current Level is: ");
+        Serial.println(level);
       }
     
 
@@ -100,6 +105,23 @@ void loop() {
       else if (level > int(keypad_input)){
         go_down = true;
         Serial.println("Going down!");
+        delay(1000);
+        Serial.println(keypad_input);
+        Serial.println(level);
+        for (int j = 0; j < int(- keypad_input + level); j += 1){
+          // level -= 1;
+          Serial.println("One level Down!");
+          digitalWrite(emergency_buzzer, HIGH);
+          delay(300);
+          digitalWrite(emergency_buzzer, LOW);
+          delay(300);
+         
+        }
+        level = keypad_input;
+        // level += 1;
+         go_down = false;
+          Serial.println("Current Level is: ");
+          Serial.println(level);
       }
       
       // Serial.println(keypad_input);
@@ -108,14 +130,17 @@ void loop() {
   }
   
   else if (emergency == true){
+    Serial.println("Emergency!");
     for(int i = 0; i < 30; i += 1){
-      Serial.println("Emergency!");
+      
       digitalWrite(emergency_buzzer, HIGH);
       delay(100);
       digitalWrite(emergency_buzzer, LOW);
       delay(100);
     }
     emergency = false;
+    delay(3000);
+    level = '0';
     
   }
   
