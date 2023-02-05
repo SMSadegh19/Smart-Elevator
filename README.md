@@ -25,7 +25,9 @@ In this project, I have made a folder named 'Simple Apps - Arduino' that conclud
 This file consists of the main codes to run this project.
 It is a mixture of main.ino file (that is the state-controller), and all_modules.ino file (that is the abstraction of needed_methods for modules).
 After completing this file, our code is finished (except web app).
-
+### Merged - Primary - V1.ino
+This file is the last version of file that is a mixture of controlling file and source codes for Arduino.
+This file is uploaded on Arduino and then it works.
 ## Modules
 #### Fingerprint Sensor
 #### Keypad
