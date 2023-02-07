@@ -14,14 +14,17 @@ Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, 4, 4);
 
 
 char level = 0;
+char destination_level = 100;
 bool emergency;
 bool go_up;
 bool go_down;
 bool opened_door;
 long duration;
+bool anybody_in;
 int distance;
 const int trig = 6;
 const int echo = 7;
+
 
 void setup() {
   Serial.begin(9600);
@@ -33,6 +36,7 @@ void setup() {
   go_up  = false;
   opened_door = false;
   emergency = false;
+  anybody_in = false;
 }
 
 int calculateDistance(){ 
@@ -46,45 +50,75 @@ int calculateDistance(){
   return distance;
 }
 
+
+bool check_emergency(int threhshold){
+
+  int e_number = 0;
+  for(int i = 1; i < 70; i += 1){
+    distance = calculateDistance(); 
+    if (distance > 0 & distance < threhshold){
+      e_number += 1;
+      Serial.println("EMErg");
+    }
+    delay(10);
+  }
+  if (e_number >= 2){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
 char keypad_input;
 void loop() {
-  if (go_down == false && go_up == false && emergency == false){
+
+  if (anybody_in == true && emergency == false && destination_level != 100 && go_up == true) {
+    //TODO
+
+  }
+  else if (anybody_in == true && emergency == false && destination_level != 100 && go_up == true){
+    //TODO
+  }
+  else if (anybody_in == true && emergency == false && destination_level == 100){
+    keypad_input = keypad.getKey();
+    
+    if (48 <= int(keypad_input) && int(keypad_input) <= 51){
+      Serial.println(keypad_input);
+      destination_level = keypad_input;
+      if (level == int(destination_level)){
+        // Here is the destination!!
+        // Nothing TO DO
+      }
+      if (level < int(destination_level)) {
+        go_up = true;
+      }
+      else if (level > int(destination_level)) {
+        go_down = true;
+      }
+    }
+  }
+  else if (go_down == false && go_up == false && emergency == false){
     keypad_input = keypad.getKey();
     if (keypad_input){
-      // int new_floor = int(keypad_input);
-      // bool ans = new_floor = level;
-      // Serial.println(ans);
+
       if (level == keypad_input){
         Serial.println("Stay in this floor!");
         opened_door = true;
-        delay(3000);
-        opened_door = false;
-          
-          delay(100);
-          int e_number = 0;
-          for(int i = 1; i < 40; i += 1){
-            distance = calculateDistance(); 
-            if (distance > 0 & distance < 19){
-              e_number += 1;
-              Serial.println("EMErg");
-            }
-            delay(10);
-          }
-          if (e_number >= 2){
-            emergency = true;
-          }
-          
+        Serial.println("Door Opened");
+        delay(6000);
+        Serial.println("Door Closed");
+        anybody_in = true;
+        Serial.println("Enter the destination floor");
       }
+
       else if (level < int(keypad_input)){
-        // Serial.println(level);
-        // Serial.println(keypad_input);
         go_up = true;
         Serial.println("Going up!");
         delay(1000);
         Serial.println(keypad_input);
         Serial.println(level);
         for (int j = 0; j < int(keypad_input - level); j += 1){
-          // level += 1;
           Serial.println("One level Up!");
           digitalWrite(emergency_buzzer, HIGH);
           delay(300);
@@ -92,16 +126,12 @@ void loop() {
           delay(300);
           
         }
-        // level -= 1;
         level = keypad_input;
         go_up = false;
         Serial.println("Current Level is: ");
         Serial.println(level);
       }
     
-
-        
-      
       else if (level > int(keypad_input)){
         go_down = true;
         Serial.println("Going down!");
@@ -109,7 +139,6 @@ void loop() {
         Serial.println(keypad_input);
         Serial.println(level);
         for (int j = 0; j < int(- keypad_input + level); j += 1){
-          // level -= 1;
           Serial.println("One level Down!");
           digitalWrite(emergency_buzzer, HIGH);
           delay(300);
@@ -118,14 +147,10 @@ void loop() {
          
         }
         level = keypad_input;
-        // level += 1;
          go_down = false;
           Serial.println("Current Level is: ");
           Serial.println(level);
-      }
-      
-      // Serial.println(keypad_input);
-  
+      }  
     }
   }
   
