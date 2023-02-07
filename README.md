@@ -57,9 +57,9 @@ To get benefits of this project:
   * Raspberry Pi needs more initial configurations, and needs monitor for the first time use.
   * Compiling codes in Arduino is much more easier.
 ## TODO
- * Some wires and a battery for remote controller.
- * How to work with bluetooth or wifi module.
- * How to work with rellay and remote modules.
+ * Some wires and a battery for remote controller. -> DONE
+ * How to work with bluetooth or wifi module. -> DONE
+ * How to work with rellay and remote modules. -> DONE
  * Connect mobile to bluetooth module for web application.
  * Complete code for connceting fingerprint module.
  * Report -> Deadline: Bahman 18th
