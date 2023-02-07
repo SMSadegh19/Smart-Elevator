@@ -183,17 +183,100 @@ void setup() {
 
 
 
+int state = 0;
+int next_state = 1;
+const S1 = 1;
+const S2 = 2;
+const S3 = 3;
+const S4 = 4;
+
 
 void loop() {
-  ///this function is used to get keys from keypad
-  char input = keypad.getKey();
-  if(input) { 
+  // ///this function is used to get keys from keypad
+  // char input = keypad.getKey();
+  // if(input) { 
 
-  //this function is used to calculate distance  
-  distance = calculateDistance();
-  Serial.println(distance);
-  }
+  // //this function is used to calculate distance  
+  // distance = calculateDistance();
+  // Serial.println(distance);
+  // }
   
-  //this function is used to scan for fingerprints
-  getFingerprintIDez();
+  // //this function is used to scan for fingerprints
+  // getFingerprintIDez();
+
+
+  state = next_state;
+
+  switch (expression)
+  {
+  case S1:
+    S1_proc();
+    next_state = S2;
+    break;
+
+  case S2:
+    
+    Serial.println("now at step2");
+    
+    Serial.println("source level is :");
+    
+    Serial.println(source_level);
+    next_state = S3
+    break;
+
+  case S3:
+
+    next_state = S4;
+    break;
+
+  case S4:
+
+    // if(/*no more input*/){
+    //   next_state = S1;
+    // }
+    // else {
+    //   next_state = S2;
+    // }
+    // break;
+
+  default:
+    break;
+  } (state) {
+
+  }
+
+}
+
+int passenger_id = -1;
+int source_level = 0;
+int current_level = 1;
+int dest_level = 0;
+
+bool S1_proc{
+  result = false
+  passenger_id = -1;
+
+  while (passenger_id == -1){
+    passenger_id = getFingerprintIDez();
+    delay(10);
+    Serial.println("waiting for authorization");
+  }
+
+    keypad_input = 0;
+    while(keypad_input == 0){
+
+    keypad_input = keypad.getKey();
+    
+    if (48 <= int(keypad_input) && int(keypad_input) <= 51){
+      Serial.println(keypad_input);
+      source_level = keypad_input;
+    }
+    else{
+      keypad_input = 0;
+    }
+    delay(10);
+    
+    Serial.println("waiting for source");
+    }
+
 }
