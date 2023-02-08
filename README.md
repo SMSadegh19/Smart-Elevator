@@ -1,5 +1,6 @@
-# Smart-Elevator
-This is the project of embedded system design.
+# Smart Elevator Manager
+## About
+Smart Elevator Manager is a project of embedded system design that implements a smart elevator system using Raspberry Pi and Arduino for face recognition and fingerprint authorization with real-time monitoring through a mobile device, utilizing modules such as a fingerprint sensor, keypad, buzzer, distance sensor, and a web progressive app.
 
 ## Contributors
 * Mohammad Sadegh Salimi
