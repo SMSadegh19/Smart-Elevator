@@ -17,6 +17,7 @@ This is the project of embedded system design.
 * https://github.com/raspberrypi/pico-micropython-examples : source code of raspberry pi samples
 * https://electropeak.com/learn/interfacing-r308-biometric-fingerprint-sensor-module-with-arduino/ : Fingerprint Sensor
 
+## Project Description
 
 ## Structure
 ### Simple Apps - Raspberri Pi
@@ -126,4 +127,5 @@ Here you can see the video result of the project:
  - [x] Complete code for connceting fingerprint module.
  - [x] Report -> Deadline: Bahman 18th
 
-## Oprional Scores
+## Optional Scores
+
