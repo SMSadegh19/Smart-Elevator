@@ -66,6 +66,11 @@ To get benefits of this project:
   * Arduino gives us a better sense of working with a hardware material.
   * Raspberry Pi needs more initial configurations, and needs monitor for the first time use.
   * Compiling codes in Arduino is much more easier.
+
+## Youtube video
+Here you can see the video result of the project:
+* https://www.youtube.com/watch?v=x7aLONpJMVo
+
 ## TODO
  * Some wires and a battery for remote controller. -> DONE
  * How to work with bluetooth or wifi module. -> DONE
