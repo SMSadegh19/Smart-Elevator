@@ -115,6 +115,9 @@ To get benefits of this project:
 Here you can see the video result of the project:
 * https://www.youtube.com/watch?v=x7aLONpJMVo
 
+[![Youtube Video](https://img.youtube.com/vi/x7aLONpJMVo/0.jpg)](https://www.youtube.com/watch?v=x7aLONpJMVo)
+
+
 ## TODO
  * Some wires and a battery for remote controller. -> DONE
  * How to work with bluetooth or wifi module. -> DONE
