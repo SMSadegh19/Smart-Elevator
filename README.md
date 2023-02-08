@@ -18,6 +18,11 @@ This is the project of embedded system design.
 * https://electropeak.com/learn/interfacing-r308-biometric-fingerprint-sensor-module-with-arduino/ : Fingerprint Sensor
 
 ## Project Description
+This is a description of a smart elevator system. The elevator only moves for individuals with registered fingerprint or face recognition. Face recognition is available outside the elevator and on every floor. For testing and simplification, two or three floors can be used.
+
+Each floor can be modeled using a mobile device to receive images. The elevator has two modes: automatic mode, in which it moves only when it recognizes registered faces or fingerprints, and guest mode, in which it moves even if the face and fingerprints are not registered.
+
+The elevator can either move up or down. For example, if the elevator is on floor 7 and moving down and a person is waiting on floor 3, the elevator will move down to floor 3. If the person on floor 3 wants to move up, and no one wants to go down or walk down, the direction of the elevator will change. Note that while the elevator is moving to the desired floor, it can be seen in real-time on the mobile device on the desired floor.
 
 ## Structure
 ### Simple Apps - Raspberri Pi
