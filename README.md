@@ -132,6 +132,3 @@ Here you can see the video result of the project:
  - [x] Connect mobile to bluetooth module for web application. -> Web application is created by it is not connected to our modules.
  - [x] Complete code for connceting fingerprint module.
  - [x] Report -> Deadline: Bahman 18th
-
-## Optional Scores
-
