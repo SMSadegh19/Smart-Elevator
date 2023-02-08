@@ -30,9 +30,14 @@ This file is the last version of file that is a mixture of controlling file and 
 This file is uploaded on Arduino and then it works.
 ## Modules
 #### Fingerprint Sensor
+This module is used to authorize the people. It checks the fingerprint of people, if it knows the fingerprint, send us an acknowledge that is the id of that user.
+If the fingerprint was not saved before, it sends an acknowledge telling us that the fingerprint was not recognized.
 #### Keypad
+It is 4*4 keypad. We can give it a hashtable that maps each of these 16 keys to 16 characters. we can define this hashtable by ourselves.
 #### Light Sensor
+This is a module for detecting light intensity, but unfortunately it broke down in our project due to connecting GND and VDD in reversly.
 #### Buzzer
+It is a very simple module to create sound. We can define the frequency of sound in our code.
 #### Arduino Board
 #### Distance Sensor
 
