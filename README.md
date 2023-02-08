@@ -46,6 +46,11 @@ We can add arbitrary functions due to our needs. We run it by Arduino IDE.
 It it used to tell use the distance of nearest thing to this sensor.
 It works in a way that sends a ultra-sound using one of its circular parts and waits until receives that sent wave.
 Then calculates the time between sending and receiving. Then we can calculate the distance using the wave speed.
+
+## Web Progressive App
+You can find simple version of web page here:
+* https://smsadegh19.github.io/SmartElevatorApp/
+
 ## How to use
 To get benefits of this project:
 * Connect the hardware modules like the attached help (info) and photoes to this project.
