@@ -39,8 +39,13 @@ This is a module for detecting light intensity, but unfortunately it broke down 
 #### Buzzer
 It is a very simple module to create sound. We can define the frequency of sound in our code.
 #### Arduino Board
+This is a microcontroller that has two main functions named "setup" and "loop".
+Working with arduino is very easy. It runs setup function once and loop function infinitely.
+We can add arbitrary functions due to our needs. We run it by Arduino IDE.
 #### Distance Sensor
-
+It it used to tell use the distance of nearest thing to this sensor.
+It works in a way that sends a ultra-sound using one of its circular parts and waits until receives that sent wave.
+Then calculates the time between sending and receiving. Then we can calculate the distance using the wave speed.
 ## How to use
 To get benefits of this project:
 * Connect the hardware modules like the attached help (info) and photoes to this project.
@@ -65,6 +70,6 @@ To get benefits of this project:
  * Some wires and a battery for remote controller. -> DONE
  * How to work with bluetooth or wifi module. -> DONE
  * How to work with rellay and remote modules. -> DONE
- * Connect mobile to bluetooth module for web application.
- * Complete code for connceting fingerprint module.
- * Report -> Deadline: Bahman 18th
+ * Connect mobile to bluetooth module for web application. -> Web application is created by it is not connected to our modules.
+ * Complete code for connceting fingerprint module. -> DONE
+ * Report -> Deadline: Bahman 18th -> DONE
