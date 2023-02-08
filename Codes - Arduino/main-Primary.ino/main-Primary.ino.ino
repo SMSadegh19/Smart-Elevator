@@ -46,10 +46,16 @@
 
 
 
-
-
-
-
+char return_bluetooth(){
+  int arrivingdatabyte; 
+  if(Serial.available( ) > 0) {  
+    arrivingdatabyte = Serial.read( ); 
+    if (arrivingdatabyte > 0 && arrivingdatabyte != 10 && arrivingdatabyte != 13){
+      return char(arrivingdatabyte);
+    }
+  } 
+  return -1;
+}
 
 
 
@@ -82,8 +88,8 @@ Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, KEYPAD_ROWS, KEYPAD_C
 long duration;
 long distance;
     
-const int trig = 6;
-const int echo = 7;
+const int trig = 12;
+const int echo = 11;
 const int rx = 0;
 const int ts = 1;
 
@@ -263,21 +269,12 @@ void loop() {
 
   case S2:
     
-    Serial.println("now at step2");
     
-    Serial.println("source level is :");
-    
-    Serial.println(source_level);
     S2_proc();
     next_state = S3;
     break;
 
   case S3:
-    Serial.println("now at step3");
-    
-    Serial.println("dest level is :");
-    
-    Serial.println(dest_level);
     S3_proc();
     next_state = S1;
     //next_state = S4;
@@ -318,36 +315,38 @@ void S1_proc() {
     delay(1);
     //Serial.println("waiting for authorization");
 
-
-
-
   }
 
     Serial.println("waiting for source");
-    keypad_input = 0;
-    while(keypad_input == 0){
+    // keypad_input = 0;
+    int answer = -1;
+    while(answer == -1){
 
-    keypad_input = keypad.getKey();
-    
-    if (48 <= int(keypad_input) && int(keypad_input) <= 51){
-      Serial.println(keypad_input);
-      source_level = keypad_input;
+    // keypad_input = keypad.getKey();
+  
+    answer = return_bluetooth();
+    }
+
+
+    if (48 <= int(answer) && int(answer) <= 51){
+      source_level = answer;
     }
     else{
-      keypad_input = 0;
+      answer = -1;
     }
     delay(10);
     
     
     }
 
-}
 
 
 
 void S2_proc(){
   
       
+      
+
       while (current_level < int(source_level)) {
         go_up();
       }
@@ -369,7 +368,6 @@ void S2_proc(){
     keypad_input = keypad.getKey();
     
     if (48 <= int(keypad_input) && int(keypad_input) <= 51){
-      Serial.println(keypad_input);
       dest_level = keypad_input;
     }
     else{
@@ -386,6 +384,12 @@ void S2_proc(){
 
 
 void S3_proc(){
+
+    if (current_level == int(dest_level)){
+        Serial.println("maskhare kardi maro ?!");
+        return;
+      }
+
     while (current_level < int(dest_level)) {
         go_up();
       }
@@ -403,10 +407,9 @@ void S3_proc(){
 
 
 void emergency_proc(){
-  keypad_input = 0;
+  
     while(digitalRead(11) != HIGH){
 
-    keypad_input = keypad.getKey();
     digitalWrite(emergency_buzzer, HIGH);
       delay(50);
       digitalWrite(emergency_buzzer, LOW);
@@ -416,16 +419,16 @@ void emergency_proc(){
 }
 
 
-void serial(){
-  int ByteReceived = 0;
-  if (Serial.available() > 0) {
-    // read byte of received data:
-    ByteReceived = Serial.read();
-    // prints the received data on serial monitor
-    Serial.print(" Received Serial Data is: ");
-    Serial.println((char)ByteReceived);
-  }
-}
+// void serial(){
+//   int ByteReceived = 0;
+//   if (Serial.available() > 0) {
+//     // read byte of received data:
+//     ByteReceived = Serial.read();
+//     // prints the received data on serial monitor
+//     Serial.print(" Received Serial Data is: ");
+//     Serial.println((char)ByteReceived);
+//   }
+// }
 
 
 void go_up(){
@@ -438,6 +441,10 @@ void go_up(){
       digitalWrite(emergency_buzzer, LOW);
       delay(1000);  
       current_level++;
+      Serial.print("currently at level");
+      
+      Serial.println(char(current_level));
+
 }
 
 void go_down(){
@@ -454,6 +461,10 @@ void go_down(){
       digitalWrite(emergency_buzzer, LOW);
       delay(1000);  
       current_level--;
+      
+      Serial.print("currently at level");
+      
+      Serial.println(char(current_level));
 }
 
 void open_door(){
@@ -465,6 +476,7 @@ void open_door(){
       delay(100);
       digitalWrite(emergency_buzzer, LOW);
       delay(100);
+      Serial.println("door is now Open!");
 }
 
 void close_door(){
@@ -476,4 +488,5 @@ void close_door(){
       delay(100);
       digitalWrite(emergency_buzzer, LOW);
       delay(100);
+      Serial.println("door is now Closed!");
 }
