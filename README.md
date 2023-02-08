@@ -119,9 +119,11 @@ Here you can see the video result of the project:
 
 
 ## TODO
- * Some wires and a battery for remote controller. -> DONE
- * How to work with bluetooth or wifi module. -> DONE
- * How to work with rellay and remote modules. -> DONE
- * Connect mobile to bluetooth module for web application. -> Web application is created by it is not connected to our modules.
- * Complete code for connceting fingerprint module. -> DONE
- * Report -> Deadline: Bahman 18th -> DONE
+ * Some wires and a battery for remote controller. [x]
+ * How to work with bluetooth or wifi module. -> [x]
+ * How to work with rellay and remote modules. -> [x]
+ * Connect mobile to bluetooth module for web application. -> [x] Web application is created by it is not connected to our modules.
+ * Complete code for connceting fingerprint module. -> [x]
+ * Report -> Deadline: Bahman 18th -> [x]
+
+## Oprional Scores
